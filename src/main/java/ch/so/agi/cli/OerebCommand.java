@@ -44,6 +44,11 @@ public class OerebCommand implements Callable<Integer> {
             
             HttpRequest request = requestBuilder.build();
             response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+            
+            // TODO: anschliessender Request mit einem AND-filter? In diesem speziellen Fall
+            // gibt es nur ein dataset, das man durchsuchen muss.
+            // Wenn wir auch noch die Adressen verwenden würden, gäbe es halt zwei.
+            
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
             return 1;

@@ -17,7 +17,7 @@ class AppTest {
         
         App app = new App();
         CommandLine cmd = new CommandLine(app);
-
+        
 //        String[] args = "my command args".split(" ");
 //        new CommandLine(new MyApp()).execute(args);
 //        assertEquals("MY COMMAND OUTPUT", out.toString
