@@ -49,6 +49,7 @@ public class OerebCommand implements Callable<Integer> {
             // gibt es nur ein dataset, das man durchsuchen muss.
             // Wenn wir auch noch die Adressen verwenden würden, gäbe es halt zwei.
             
+            // display verwenden für resultate-anzeige.
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
             return 1;
