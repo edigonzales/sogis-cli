@@ -11,24 +11,25 @@ import java.io.StringWriter;
 
 class AppTest {
     @Test 
-    void appHasAGreeting() {
-//        App classUnderTest = new App();
-//        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
-        
+    void oereb_Ok() {        
         App app = new App();
         CommandLine cmd = new CommandLine(app);
-        
-//        String[] args = "my command args".split(" ");
-//        new CommandLine(new MyApp()).execute(args);
-//        assertEquals("MY COMMAND OUTPUT", out.toString
-        
+
         StringWriter sw = new StringWriter();
         cmd.setOut(new PrintWriter(sw));
-        
-        int exitCode = cmd.execute("oereb");
+
+        int exitCode = cmd.execute("oereb", "-q", "messen 168");
+
         assertEquals(0, exitCode);
-        assertEquals("Your output is abc...", sw.toString());
-
-
+        assertEquals("\n"
+                + "GB-Nr: 168 - Balm bei Messen [Messen] (Liegenschaft)\n"
+                + "      https://geo.so.ch/map/?oereb_egrid=CH181832067404\n"
+                + "\n"
+                + "GB-Nr: 168 - Messen (Liegenschaft)\n"
+                + "      https://geo.so.ch/map/?oereb_egrid=CH807306583219\n"
+                + "\n"
+                + "GB-Nr: 90168 - Messen (Liegenschaft)\n"
+                + "      https://geo.so.ch/map/?oereb_egrid=CH869832061756\n"
+                + "", sw.toString());
     }
 }
